@@ -54,7 +54,6 @@ python scrape_audible.py
 scrape_audible/
 │
 ├── scrape_audible.py         # Main script for scraping
-├── requirements.txt          # List of dependencies
 ├── README.md                 # Project documentation
 └── virtualenv/               # Virtual environment (optional, not committed)
 
