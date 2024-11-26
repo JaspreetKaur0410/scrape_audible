@@ -20,11 +20,43 @@ The script extracts the following attributes:
 
 ---
 
+
 ## Getting Started
 
-Follow these steps to set up the project on your local machine:
+### Instructions in Code
 
-### 1. Clone the Repository
 ```bash
+# Step 1: Clone the Repository
 git clone https://github.com/yourusername/scrape_audible.git
 cd scrape_audible
+
+# Step 2: Create a Virtual Environment
+python -m venv virtualenv
+
+# Step 3: Activate the Virtual Environment
+# On Windows:
+virtualenv\Scripts\activate
+
+# On macOS/Linux:
+source virtualenv/bin/activate
+
+# Step 4: Install Required Packages
+pip install selenium pandas
+
+# Step 5: Download and Configure ChromeDriver
+# 1. Download ChromeDriver from https://sites.google.com/a/chromium.org/chromedriver/
+# 2. Ensure it matches your Google Chrome version.
+# 3. Place the 'chromedriver' executable in the project directory or add it to your PATH.
+
+# Step 6: Run the Script
+python scrape_audible.py
+
+scrape_audible/
+│
+├── scrape_audible.py         # Main script for scraping
+├── requirements.txt          # List of dependencies
+├── README.md                 # Project documentation
+└── virtualenv/               # Virtual environment (optional, not committed)
+
+
+
