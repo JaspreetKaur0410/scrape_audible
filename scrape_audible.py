@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pandas as pd
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 
 # Initialize Chrome options
@@ -31,11 +33,14 @@ lengths = []
 pages_to_scrape = last_page
 current_page = 1
 
-while current_page <= pages_to_scrape:
+while current_page <= last_page:
     time.sleep(5)  # Wait for the page to load completely
 
     # Get all books on the current page
-    list_of_books = driver.find_elements(By.XPATH, "//li[contains(@class, 'productListItem')]")
+    #list_of_books = driver.find_elements(By.XPATH, "//li[contains(@class, 'productListItem')]")
+    list_of_books = WebDriverWait(driver, 10).until(
+        EC.presence_of_all_elements_located((By.CLASS_NAME, "productListItem"))
+    )
 
     for book in list_of_books:
         try:
